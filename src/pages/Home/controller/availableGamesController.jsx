@@ -6,7 +6,7 @@ export const availableGamesController = (searchInput) => {
 
     const getAvailableGames = () => {
         const fetchPromises = myGames.map(async (search) => {
-            const res = await fetch(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_APP_KEY}&search=${search}&metacritic=50,100&search_exact=true`);
+            const res = await fetch(`https://api.rawg.io/api/games?key=${import.meta.env.VITE_VERCEL_KEY}&search=${search}&metacritic=50,100&search_exact=true`);
             const data = await res.json();
             if (data.count > 0) {
                 return data.results[0];
