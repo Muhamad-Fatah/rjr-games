@@ -39,7 +39,7 @@ const Home = () => {
                     <p>{listAllGames.isLoading ? "Loading..." : ""}</p>
                 </div>
 
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-16 gap-y-4 mx-auto mb-4">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-x-16 gap-y-4 mx-auto mb-4 place-content-center">
                     {(mode === "all" ? (listAllGames.results) : listAvailableGames)?.map(game => (
                         <GridView item={game} key={game.slug} />
                     ))}

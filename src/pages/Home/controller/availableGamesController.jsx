@@ -19,6 +19,7 @@ export const availableGamesController = (searchInput) => {
             .then((results) => {
                 const filterAndSortResults = results.filter((game) => game !== null).sort((a, b) => a.name.localeCompare(b.name))
                 const availableGames = [...new Set(filterAndSortResults.map(game => JSON.stringify(game)))].map(game => JSON.parse(game))
+                setListAvailableGames(availableGames)
                 localStorage.setItem("availableGames", JSON.stringify(availableGames));
             })
             .catch((error) => {
